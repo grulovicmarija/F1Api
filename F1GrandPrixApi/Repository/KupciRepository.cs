@@ -14,6 +14,7 @@ namespace F1GrandPrixApi.Repository
         {
             this.context = context;
         }
+
         public Kupac UlogujKupca(string email, string sifra)
         {
             //Log In

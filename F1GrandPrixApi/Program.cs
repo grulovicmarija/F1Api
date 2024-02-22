@@ -12,8 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-//dodajemo kreirani DataContext za komunikaciju sa bazom 
+//dodat DataContext
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -25,7 +24,6 @@ builder.Services.AddScoped<IKupciRepository, KupciRepository>();
 builder.Services.AddScoped<IUcesniciRepository, UcesniciRepository>();
 builder.Services.AddScoped<IRezervacijaRepository, RezervacijaRepository>();
 
-//dodajemo da bi prepoznao AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
@@ -44,7 +42,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//dodajemo da bismo odobrili pristup sa localhosta
 app.UseCors(builder =>
 {
     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();

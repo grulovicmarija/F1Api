@@ -91,7 +91,6 @@ namespace F1GrandPrixApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            //ne kreiramo ako vec postoji kupac sa istom mail adresom 
             if (kupciRepository.ZauzetMejl(kupacDto.email))
                 return BadRequest("You already have an account");
 

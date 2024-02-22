@@ -8,11 +8,7 @@ namespace F1GrandPrixApi
     {
         public MappingProfiles()
         {
-            //navodimo sve mapping profile koje cemo koristiti
-            //mapiranje se vrsi izmedju Data Transfer objekata i originalnih objekata
-
-
-            //CreateMap<Trka, TrkaDto>().ReverseMap();
+            //mapiranje izmedju Data Transfer objekata i originalnih objekata
             CreateMap<Trka, TrkaDto>();
             CreateMap<TrkaDto, Trka>();
             CreateMap<Grad, GradDto>();

@@ -85,7 +85,7 @@ namespace F1GrandPrixApi.Controllers
                 return BadRequest(ModelState);
 
 
-            zoneRepository.SmanjiMesto(rezervacija.ZonaId);
+            zoneRepository.SmanjiMesto(rezervacija.ZonaId, rezervacija.brojKarata);
 
 
             return Ok(rezervacija);
@@ -148,21 +148,6 @@ namespace F1GrandPrixApi.Controllers
 
             return Ok(rezervacijeSend);
         }
-
-        //[HttpGet("/token/{token}/{email}")]
-        //public IActionResult UcitajRezervacijuKupcaPremaTokenu(string token, string email)
-        //{
-
-        //    Rezervacija rezervacija = rezervacijaRepository.UcitajRezervacijuPremaTokenu(email, token);
-
-        //    if (rezervacija == null)
-        //        return NotFound(); 
-
-        //    return Ok(rezervacija);
-        //}
-
-
-
 
     }
 }

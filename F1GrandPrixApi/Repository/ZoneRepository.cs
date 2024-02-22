@@ -17,10 +17,10 @@ namespace F1GrandPrixApi.Repository
             return context.zone.Any(z => z.id == zonaId);
         }
 
-        public void SmanjiMesto(int zonaId)
+        public void SmanjiMesto(int zonaId, int brojKarata)
         {
             var zona = context.zone.Where(z => z.id == zonaId).FirstOrDefault();
-            zona.preostaloMesta = zona.preostaloMesta - 1;
+            zona.preostaloMesta = zona.preostaloMesta - brojKarata;
             context.Update(zona);
             Sacuvaj(); 
         }

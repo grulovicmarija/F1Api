@@ -5,11 +5,9 @@ namespace F1GrandPrixApi.Data
 {
     public class DataContext : DbContext
     {
-        //DataContext > klasa za komunikaciju sa bazom
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-            //prosledjuju se opcije kao sto je konekcioni string
         }
 
 
@@ -23,9 +21,6 @@ namespace F1GrandPrixApi.Data
         public DbSet<Ucesnik> ucesnici { get; set; }
         public DbSet<Zona> zone { get; set; }
 
-
-        //OnModelCreating metoda za konfiguraciju specificnosti u bazi
-        //ovde konfigurisemo many-to-many veze za EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -55,9 +50,6 @@ namespace F1GrandPrixApi.Data
                 .WithMany(t => t.rezervacije)
                 .HasForeignKey(r => r.TrkaId)
                 .OnDelete(DeleteBehavior.NoAction);
-
-
-            //konfig. decimal vrednosti 
 
          
 

@@ -7,7 +7,7 @@ namespace F1GrandPrixApi.Interfaces
         List<Zona> UcitajZone();
         Zona UcitajZonu(int zonaId);
         bool PostojiZona(int zonaId);
-        void SmanjiMesto(int zonaId);
+        void SmanjiMesto(int zonaId, int brojKarata);
         bool Dostupna(int zonaId); 
         bool Sacuvaj(); 
     }
